@@ -7,14 +7,16 @@ const app = express();
 app.use(express.static('public'));
 
 
-const YOUR_DOMAIN = 'http://localhost:4242';
+const YOUR_DOMAIN = 'https://payment-gateway-demo.onrender.com';
 const corsOptions = {
   origin: YOUR_DOMAIN, // Replace with the origin of your frontend app
 };
 app.use(cors(corsOptions))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.get('/',()=>{
+  res.redirect('/checkout.html')
+})
 app.post('/create-checkout-session', async (req, res) => {
 
   //payload
