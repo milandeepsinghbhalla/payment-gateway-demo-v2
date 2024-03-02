@@ -14,7 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.get('/',()=>{
+app.get('/',(req,res,next)=>{
   res.redirect('/checkout.html')
 })
 app.post('/create-checkout-session', async (req, res) => {
