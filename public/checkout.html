@@ -48,6 +48,7 @@
       const resultStatus = res.status
       const resultData = await res.json()
       console.log(`result status--- ${resultStatus} ---- result data---- ${resultData}`);
+      window.location.href = resultData.resultUrl
     }
     const checkoutButton = document.getElementById('checkout-button')
     checkoutButton.addEventListener('click', () => {
